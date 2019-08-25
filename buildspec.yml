@@ -11,6 +11,6 @@ phases:
 
   post_build:
     commands:
-      - eval `aws ecr get-login --region ap-southeast-2`
+      - eval `aws ecr get-login --region ap-southeast-2 --no-include-email`
       - docker tag ml-test-repo:latest <your account number>.dkr.ecr.ap-southeast-2.amazonaws.com/ml-test-repo:latest
       - docker push <your account number>.dkr.ecr.ap-southeast-2.amazonaws.com/ml-test-repo:latest
